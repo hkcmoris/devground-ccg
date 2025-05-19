@@ -1,0 +1,43 @@
+{
+    "name": "devground-ccg",
+    "version": "1.0.1",
+    "description": "modern collectible card game",
+    "main": "index.js",
+    "sideEffects": false,
+    "scripts": {
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hkcmoris/devground-ccg.git"
+    },
+    "devDependencies": {
+        "@types/three": "^0.176.0",
+        "ts-loader": "^9.0.0",
+        "typescript": "^5.0.0",
+        "webpack": "^5.0.0",
+        "webpack-bundle-analyzer": "^4.10.2",
+        "webpack-cli": "^4.0.0",
+        "webpack-dev-server": "^4.0.0"
+    },
+    "dependencies": {
+        "three": "^0.160.0",
+        "uuid": "^9.0.0"
+    },
+    "keywords": [
+        "TCG",
+        "CCG",
+        "card game",
+        "deck building",
+        "collectible card game"
+    ],
+    "author": "Moravec Ondřej",
+    "license": "GPL-3.0-only",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/hkcmoris/devground-ccg/issues"
+    },
+    "homepage": "https://github.com/hkcmoris/devground-ccg#readme"
+}
