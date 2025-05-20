@@ -1,6 +1,6 @@
-import { Card } from './Card';
+import { Card } from "./Card";
 
 export interface Zone {
-  name: string;
-  cards: Card[];
+    name: string;
+    cards: Card[];
 }

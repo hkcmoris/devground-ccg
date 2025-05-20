@@ -1,13 +1,16 @@
-import { Zone } from './Zone';
+import { HeroCard } from "./Card";
+import { Zone } from "./Zone";
 
 export interface Player {
-  id: string;
-  name: string;
-  life: number;
-  mana: number;
+    id: string;
+    name: string;
+    life: number;
+    mana: number;
 
-  deck: Zone;
-  hand: Zone;
-  board: Zone;
-  graveyard: Zone;
+    hero: HeroCard;
+
+    deck: Zone;
+    hand: Zone;
+    board: Zone;
+    graveyard: Zone;
 }
