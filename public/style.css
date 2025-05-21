@@ -1,0 +1,39 @@
+/* public/style.css */
+html, body, canvas {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+body {
+    background: url('assets/ui/box.png') no-repeat center center fixed;
+    background-size: 125% 125%;
+}
+
+.game-button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 50%;
+    right: 20px;
+    background: url('assets/ui/btn-end-turn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.2s ease;
+    transform: translate(0, 50%) scale(0.95);
+}
+
+.game-button:hover {
+    background: url('assets/ui/btn-end-turn-highlighted.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translate(0, 50%) scale(1.05);
+}

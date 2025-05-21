@@ -1,7 +1,8 @@
+// src/core/combat.ts
 import { CharacterCard } from "./Card";
 import { Player } from "./Player";
 
-function characterBattle(attacker: CharacterCard, defender: CharacterCard) {
+export function characterBattle(attacker: CharacterCard, defender: CharacterCard) {
     defender.health -= attacker.attack;
 
     console.log(`⚔️ ${attacker.name} attacks ${defender.name} for 💥${attacker.attack} damage!`);
@@ -9,7 +10,7 @@ function characterBattle(attacker: CharacterCard, defender: CharacterCard) {
     if (defender.health <= 0) console.log(`${defender.name} dies!`);
 }
 
-function attackPlayer(attacker: CharacterCard, defendingPlayer: Player) {
+export function attackPlayer(attacker: CharacterCard, defendingPlayer: Player) {
     const hero = defendingPlayer.hero;
 
     if (attacker.attack >= hero.attack) {

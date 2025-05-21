@@ -1,3 +1,4 @@
+// src/systems/actions.ts
 import { Player } from "../core/Player";
 import { Card } from "../core/Card";
 
@@ -13,11 +14,11 @@ export function drawCard(player: Player): void {
     }
 }
 
-export function playFirstAvailableCard(player: Player): void {
+export function playFirstAvailableCard(player: Player): boolean {
     const playable = player.hand.cards.find((card) => card.cost <= player.mana);
     if (!playable) {
         console.log(`${player.name} has no playable cards.`);
-        return;
+        return false;
     }
 
     // Pay mana and move card to board
@@ -28,6 +29,8 @@ export function playFirstAvailableCard(player: Player): void {
     player.board.cards.push(playable);
 
     console.log(
-        `${player.name} plays ${playable.name} [${playable.cost} mana] to the board.`
+        `${player.name} plays (${playable.cost}) ${playable.name} [${playable.attack} / ${playable.health}] to the board.`
     );
+    
+    return true;
 }

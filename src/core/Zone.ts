@@ -1,3 +1,4 @@
+// src/core/Zone.ts
 import { Card } from "./Card";
 
 export interface Zone {

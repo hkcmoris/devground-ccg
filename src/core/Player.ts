@@ -1,3 +1,4 @@
+// src/core/Player.ts
 import { HeroCard } from "./Card";
 import { Zone } from "./Zone";
 

@@ -1,3 +1,4 @@
+// src/core/Card.ts
 export type CardType = "hero" | "character" | "spell" | "location";
 
 export interface Card {
@@ -6,6 +7,8 @@ export interface Card {
     description: string;
     type: CardType;
     cost: number;
+    imageUrl?: string; // URL to the card image
+    rarity?: "common" | "uncommon" | "rare" | "legendary"; // could be an enum
 
     attack?: number;
     health?: number;
@@ -27,7 +30,7 @@ export interface HeroCard extends Card {
     type: "hero";
     attack: number;
     awakened: boolean;
-    awakenCondition: AwakeningCondition;
+    awakenCondition?: AwakeningCondition;
     awakenedForm?: HeroCard;
 }
 
