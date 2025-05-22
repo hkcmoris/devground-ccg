@@ -5,6 +5,32 @@ import { Player } from "./core/Player";
 import { Zone } from "./core/Zone";
 import { Game } from "./core/Game";
 import { endTurn } from "./systems/TurnManager";
+import { drawCard } from "./systems/actions";
+import { updateGameUI, updateLocalPlayerUI, updateOpponentUI } from "./ui/updateTurnUI";
+
+// === Preload UI Assets ===
+// Preload essential UI assets to ensure they are available when needed
+// This is a simple function to preload images
+// You can expand this to include other assets like audio, fonts, etc.
+const preloadUIAssets = () => {
+  const assets = [
+    '/assets/ui/btn-end-turn.png',
+    '/assets/ui/btn-end-turn-highlighted.png',
+    '/assets/ui/health.png',
+    '/assets/ui/mana.png',
+    '/assets/ui/cards.png',
+    // add more essentials
+  ];
+
+  assets.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
+preloadUIAssets();
+
+// === Game Initialization ===
 
 function createDummyCard(name: string): Card {
     return {
@@ -64,6 +90,9 @@ function createPlayer(name: string): Player {
 const player1 = createPlayer("Moris");
 const player2 = createPlayer("Kaiba");
 
+drawCard(player1, 5);
+drawCard(player2, 5);
+
 console.log(`🃏 ${player1.name} vs ${player2.name}`);
 console.log(`💖 ${player1.name} Life: ${player1.life}`);
 console.log(`💖 ${player2.name} Life: ${player2.life}`);
@@ -73,6 +102,8 @@ console.log(`🃏 ${player1.name} Hand: ${player1.hand.cards.length} cards`);
 console.log(`🃏 ${player2.name} Hand: ${player2.hand.cards.length} cards`);
 
 const game: Game = new Game(player1, player2);
+
+updateGameUI(player1, player2, game.currentPlayer);
 
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("btn-end-turn");

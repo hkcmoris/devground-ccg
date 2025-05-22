@@ -2,15 +2,15 @@
 import { Player } from "../core/Player";
 import { Card } from "../core/Card";
 
-export function drawCard(player: Player): void {
-    const card = player.deck.cards.shift();
-    if (card) {
-        player.hand.cards.push(card);
-        console.log(`${player.name} draws ${card.name}`);
-    } else {
-        console.log(
-            `${player.name} tried to draw a card, but the deck is empty!`
-        );
+export function drawCard(player: Player, amount: number = 1): void {
+    for (let i = 0; i < amount; i++) {
+        const card = player.deck.cards.shift();
+        if (card) {
+            player.hand.cards.push(card);
+            console.log(`${player.name} draws ${card.name}`);
+        } else {
+            console.log(`${player.name} tried to draw a card, but the deck is empty!`);
+        }
     }
 }
 
