@@ -1,6 +1,6 @@
+// src/ui/updateTurnUI.ts
 import { Player } from "../core/Player";
 
-// src/ui/updateTurnUI.ts
 export function updateTurnUI(currentPlayer: Player, localPlayer: Player): void {
     const playerLabel = document.getElementById("player-info");
     const opponentLabel = document.getElementById("opponent-info");
